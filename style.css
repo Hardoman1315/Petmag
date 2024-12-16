@@ -30,6 +30,12 @@ p{
     white-space: normal;
 }
 
+b{
+    font-size: large;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
 .menu{
     background-color: #57abec;
     width: 65vw;
@@ -418,4 +424,58 @@ p{
 
 .white-color{
     color: #FFFFFF;
+}
+
+.blue-color{
+    color: #57ABEC;
+}
+
+.blank{
+    display: flex;
+    flex-direction: column;
+    padding: 3vh 1vw 1vh 2vw;
+    width: 20vw;
+    height: 40vh;
+    margin-top: 15vh;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+}
+
+#submit-btn{
+    margin: 2vh 0 2vh 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #57ABEC;
+    border-radius: 5px;
+    width: 10vw;
+    height: 5vh;
+    color: white;
+    font-size: large;
+    font-weight: 100;
+    border: none;
+    outline: none;
+}
+
+#submit-btn:hover{
+    background-color: #49a1e4;
+}
+
+input[type="tel"], #uname{
+    text-align: left;
+    text-indent: 1vw;
+    display: flex;
+    border-radius: 5px;
+    width: 14vw;
+    height: 4vh;
+    color: #000000;
+    background-color: #D9D9D9;
+    opacity: 50%;
+    border: none;
+    outline: none;
+}
+
+#uname{
+    margin-top: 2vh;
 }

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <title>ВетМаг</title>
+</head>
+<body>
+
+  
+
+    <div class="menu">
+        <div class="menu-options">
+            <a href="#">    
+                <div class="button-wrapper">
+                    <a href="{% url 'vetmag_main'%}"><div class="button"><b>Главная</b></div></a>
+                </div>
+            </a>
+            <a href="#">    
+                <div class="button-wrapper">
+                    <div class="button"><a href="#"><b>Акции</b></a></div>
+                </div>
+            </a>
+            <a href="#">    
+                <div class="button-wrapper">
+                    <div class="button"><a href="#"><b>Обратная связь</b></a></div>
+                </div>
+            </a>
+            <a href="#">    
+                <div class="button-wrapper">
+                    <div class="button"><a href="#"><b>Доставка</b></a></div>
+                </div>
+            </a>
+        </div>
+        <a href="{% url 'vetmag_login'%}">    
+            <div class="button-wrapper">
+                <div class="button"><b>Личный кабинет</b></div>
+            </div>
+        </a>
+    </div>
+
+  
+    <div class="blank">
+        <h1 class="blue-color">Регистрация</h1>
+        <form action="{% url 'vetmag_registration' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="phone_number" placeholder="+7(999)999-99-99" required><br>
+            <input type="text" name="username" placeholder="Ваше имя" required><br>
+            <input type="password" name="password" placeholder="Пароль" required><br>
+            <input type="submit" value="Зарегистрироваться" id="submit-btn">
+        </form>
+    </div>
+</body>
+</html>

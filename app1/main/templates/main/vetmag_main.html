@@ -1,51 +1,52 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <title>ВетМаг</title>
 </head>
 <body>
 
-    <!-- menu -->
+   
 
     <div class="menu">
         <div class="menu-options">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Главная</b></div>
+                    <a href="{% url 'vetmag_main'%}"><div class="button"><b>Главная</b></div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Акции</b></div>
+                    <div class="button"><a href="#"><b>Акции</b></a></div>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Обратная связь</b></div>
+                    <div class="button"><a href="#"><b>Обратная связь</b></a></div>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Доставка</b></div>
+                    <div class="button"><a href="#"><b>Доставка</b></a></div>
                 </div>
             </a>
         </div>
-        <a href="#">    <!-- link here -->
+        <a href="{% url 'vetmag_login'%}">    
             <div class="button-wrapper">
                 <div class="button"><b>Личный кабинет</b></div>
             </div>
         </a>
     </div>
 
-    <!-- buisness-card -->
+    
 
     <div class="buisness-card">
         <div class="card-info">
             <div class="logo">
-                <img src="Images/logo.png">
+                <img src="{% static 'main/Images/logo.png' %}"> 
             </div>
             <div class="about">
                 <div class="info">
@@ -57,17 +58,17 @@
                         <p>+7(904) 831-23-42</p>
                         <p>+7(904) 942-85-12</p>
                     </div>
-                    <a href="#">    <!-- link here -->
+                    <a href="#">    
                         <div class="cart">
                             <div class="cart-img">
-                                <img src="Images/cart_ico.png">
+                                <img src="{% static 'main/Images/cart_ico.png' %}"> 
                             </div>
                             <p>Корзина</p>
                         </div>
                     </a>
                 </div>
                 <div class="search-field">
-                    <form action="#" method="post" autocomplete="off">  <!-- action here -->
+                    <form action="#" method="post" autocomplete="off">  
                         <input type="text" id="search" placeholder="Найти товары" required>
                         <input type="submit" class="search-logo" value="">
                     </form>
@@ -76,68 +77,68 @@
         </div>
         <div class="line" style="position: relative; top: 4.2vh;"></div>
         <div class="card-catalogue">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для кошек</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для кошек</div></a>
+                </div> 
+            </a>
+            <a href="#">    
+                <div class="button-wrapper-white">
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для собак</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для собак</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для грызунов</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для грызунов</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для птиц</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для птиц</p></div>
-                </div>
-            </a>
-            <a href="#">    <!-- link here -->
-                <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для рыб</p></div>
+                    <div class="button"><a href="{% url 'vetmag_catalogue' %}">Товары для рыб</a></div>
                 </div>
             </a>
         </div>
     </div>
 
-    <!-- content area -->
+   
 
     <div class="content">
 
-        <!-- left collumn -->
+        
 
         <div class="left-collumn">
             <div class="item-catalogue">
                 <div class="catalogue-title">
                     <p>Каталог товаров</p>
                 </div>
-                <a href="#">    <!-- link here -->
+                <a href="#">    
                     <div class="button-wrapper-catalogue">
-                        <div class="button-catalogue"><p>🐈Товары для кошек</p></div>
+                        <a href="{% url 'vetmag_catalogue' %}"><div class="button-catalogue">🐈Товары для кошек</div></a>
                     </div>
                 </a>
-                <a href="#">    <!-- link here -->
+                <a href="#">    
                     <div class="button-wrapper-catalogue">
-                        <div class="button-catalogue"><p>🐕Товары для собак</p></div>
+                        <a href="{% url 'vetmag_catalogue' %}"><div class="button-catalogue">🐕Товары для собак</div></a>
                     </div>
                 </a>
-                <a href="#">    <!-- link here -->
+                <a href="#">    
                     <div class="button-wrapper-catalogue">
-                        <div class="button-catalogue"><p>🐇Товары для грызунов</p></div>
+                        <a href="{% url 'vetmag_catalogue' %}"><div class="button-catalogue">🐇Товары для грызунов</div></a>
                     </div>
                 </a>
-                <a href="#">    <!-- link here -->
+                <a href="#">    
                     <div class="button-wrapper-catalogue">
-                        <div class="button-catalogue"><p>🐦Товары для птиц</p></div>
+                        <a href="{% url 'vetmag_catalogue' %}"><div class="button-catalogue">🐦Товары для птиц</div></a>
                     </div>
                 </a>
-                <a href="#">    <!-- link here -->
+                <a href="#">    
                     <div class="button-wrapper-catalogue">
-                        <div class="button-catalogue"><p>🐟Товары для рыб</p></div>
+                        <a href="{% url 'vetmag_catalogue' %}"><div class="button-catalogue">🐟Товары для рыб</div></a>
                     </div>
                 </a>
             </div>
@@ -168,23 +169,23 @@
             </div>
         </div>
 
-        <!-- right collumn -->
+        
 
         <div class="right-collumn">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="ad-image">
-                    <img src="Images/ad-image.png">
+                    <img src="{% static 'main/Images/ad-image.png' %}"> 
                 </div>
             </a>
 
-            <!-- 1st category -->
+          
 
             <div class="item-category">
                 <h1>Рекомендуемые товары</h1>
                 <div class="item-row">
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/product-1.png' %}"> 
                         </div>
                         <div class="card-text">
                             <p>Royal Canin Sterilised</p>
@@ -194,7 +195,7 @@
                         <br>
                         <div class="price">
                             <h2>76 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -203,7 +204,7 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-2.png">
+                            <img src="{% static 'main/Images/product-2.png' %}"> 
                         </div>
                         <div class="card-text">
                             <p>Royal Canin British</p>
@@ -213,7 +214,7 @@
                         <br>
                         <div class="price">
                             <h2>593 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -222,7 +223,7 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-3.png">
+                            <img src="{% static 'main/Images/product-3.png' %}"> 
                         </div>
                         <div class="card-text">
                             <p>AlphaPet Superpremium</p>
@@ -232,7 +233,7 @@
                         <br>
                         <div class="price">
                             <h2>1435 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -242,14 +243,14 @@
                 </div>
             </div>
 
-            <!-- 2nd category -->
+            
 
             <div class="item-category">
                 <h1>Игрушки для питомцев</h1>
                 <div class="item-row">
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-4.png">
+                            <img src="{% static 'main/Images/product-4.png' %}"> 
                         </div>
                         <div class="card-text">
                             <p>Кошачья палка с пером</p>
@@ -259,7 +260,7 @@
                         <br>
                         <div class="price">
                             <h2>165 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">   
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -268,7 +269,7 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-5.png">
+                            <img src="{% static 'main/Images/product-5.png' %}"> 
                         </div>
                         <div class="card-text">
                             <p>Плюшевая пишащая гантель для собак</p>
@@ -278,7 +279,7 @@
                         <br>
                         <div class="price">
                             <h2>210 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -287,7 +288,7 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-6.png">
+                            <img src="{% static 'main/Images/product-6.png' %}"> 
                         </div>
                         <div class="card-text">
                             <p>Умный мяч для кошек</p>
@@ -297,7 +298,7 @@
                         <br>
                         <div class="price">
                             <h2>430 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -307,7 +308,7 @@
                 </div>
             </div>
 
-            <!-- About us section -->
+          
 
             <div class="about-us">
                 <h1>Добро пожаловать в интернет-зоомагазин "ВетМаг"</h1>
@@ -319,7 +320,7 @@
 
     </div>
 
-    <!-- Footer -->
+
 
     <div class="footer">
         <div class="left-footer-collumn">
@@ -327,7 +328,7 @@
                 <h1>Подписаться</h1>
                 <h1>на рассылку</h1>
                 <br>
-                <form action="#" method="post" autocomplete="off">  <!-- action here -->
+                <form action="#" method="post" autocomplete="off">  
                     <input type="email" id="subscription" placeholder="Введите ваш email" required>
                     <input type="submit" class="subscription-logo" value="">
                 </form>
@@ -391,4 +392,3 @@
 </body>
 </html>
 
-<!-- Total width of edited area - 65vw -->

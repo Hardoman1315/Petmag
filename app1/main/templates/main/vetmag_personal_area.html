@@ -1,51 +1,52 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <title>ВетМаг</title>
 </head>
 <body>
 
-    <!-- menu -->
+   
 
     <div class="menu">
         <div class="menu-options">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Главная</b></div>
+                    <a href="{% url 'vetmag_main'%}"><div class="button"><b>Главная</b></div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Акции</b></div>
+                    <div class="button"><a href="#"><b>Акции</b></a></div>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Обратная связь</b></div>
+                    <div class="button"><a href="#"><b>Обратная связь</b></a></div>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Доставка</b></div>
+                    <div class="button"><a href="#"><b>Доставка</b></a></div>
                 </div>
             </a>
         </div>
-        <a href="#">    <!-- link here -->
+        <a href="{% url 'vetmag_login'%}">    
             <div class="button-wrapper">
                 <div class="button"><b>Личный кабинет</b></div>
             </div>
         </a>
     </div>
 
-    <!-- buisness-card -->
+    
 
     <div class="buisness-card">
         <div class="card-info">
             <div class="logo">
-                <img src="Images/logo.png">
+                <img src="{% static 'main/Images/logo.png' %}"> 
             </div>
             <div class="about">
                 <div class="info">
@@ -57,17 +58,17 @@
                         <p>+7(904) 831-23-42</p>
                         <p>+7(904) 942-85-12</p>
                     </div>
-                    <a href="#">    <!-- link here -->
+                    <a href="#">    
                         <div class="cart">
                             <div class="cart-img">
-                                <img src="Images/cart_ico.png">
+                                <img src="{% static 'main/Images/cart_ico.png' %}"> 
                             </div>
                             <p>Корзина</p>
                         </div>
                     </a>
                 </div>
                 <div class="search-field">
-                    <form action="#" method="post" autocomplete="off">  <!-- action here -->
+                    <form action="#" method="post" autocomplete="off">  
                         <input type="text" id="search" placeholder="Найти товары" required>
                         <input type="submit" class="search-logo" value="">
                     </form>
@@ -76,36 +77,36 @@
         </div>
         <div class="line" style="position: relative; top: 4.2vh;"></div>
         <div class="card-catalogue">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для кошек</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для кошек</div></a>
+                </div> 
+            </a>
+            <a href="#">    
+                <div class="button-wrapper-white">
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для собак</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для собак</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для грызунов</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для грызунов</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для птиц</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для птиц</p></div>
-                </div>
-            </a>
-            <a href="#">    <!-- link here -->
-                <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для рыб</p></div>
+                    <div class="button"><a href="{% url 'vetmag_catalogue' %}">Товары для рыб</a></div>
                 </div>
             </a>
         </div>
     </div>
 
-    <!-- content area -->
 
+    
     <div class="content">
 
         <!-- left collumn -->
@@ -176,10 +177,11 @@
 
             <div class="user-card">
                 <div class="user-collumn">
-                    <div class="avatar"><img src="Images/missing-image.png" style="object-fit: cover"></div>
-                    <h1>Александр</h1>
-                    <p class="uinfo">+7(999)999-99-99</p>
-                    <p class="uinfo">qwerty@gmail.com</p>
+                    
+                    <div class="avatar"><img src="{% static 'main/Images/missing-image.png' %}" style="object-fit: cover"></div> 
+                    <h1>{{ user.first_name }}</h1> 
+                    <p class="uinfo">{{ user.username }}</p> 
+                    <p class="uinfo">{{ user.email }}</p> 
                 </div>
                 <div class="user-collumn">
                     <p class="uinfo">Мои заказы</p>
@@ -193,7 +195,10 @@
                     <p class="uinfo">Сменить пароль</p>
                     <p class="uinfo">История входов</p>
                     <p class="uinfo">Прочее</p>
-                    <p class="uinfo">Выход из аккаунта</p>
+                   
+                    <a href="{% url 'logout' %}">
+                        <p class="uinfo">Выход из аккаунта</p>
+                    </a>
                 </div>
             </div>
 
@@ -204,10 +209,10 @@
                 <div class="item-row">
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/one.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Purina Pro Plan Live Clear</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -223,10 +228,10 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/two.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Profine Canin Sterilised</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -242,10 +247,10 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/three.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Purina Pro</p>
                         </div>
                         <br>
                         <div class="line"></div>

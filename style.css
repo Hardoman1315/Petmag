@@ -479,3 +479,46 @@ input[type="tel"], #uname{
 #uname{
     margin-top: 2vh;
 }
+
+.user-card{
+    display: flex;
+    flex-direction: row;
+    width: 47.5vw;
+    height: 30vh;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-collumn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 11vw;
+    height: 30vh;
+    padding: 2vh 1vw 2vh 1vw;
+    text-align: center;
+}
+
+.avatar{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.uinfo{
+    margin: 0.5vh 0 0.5vh 0;
+}
+
+.uinfo:first-child{
+    margin: 4vh 0 0.5vh 0;
+}
+
+.giant-text{
+    font-size: 40px;
+}
+
+.lil-margin{
+    margin: 0.3vh 0 0.3vh 0;
+}

@@ -1,51 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <title>ВетМаг</title>
 </head>
 <body>
 
-    <!-- menu -->
+   
 
     <div class="menu">
         <div class="menu-options">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Главная</b></div>
+                    <a href="{% url 'vetmag_main'%}"><div class="button"><b>Главная</b></div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Акции</b></div>
+                    <div class="button"><a href="#"><b>Акции</b></a></div>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Обратная связь</b></div>
+                    <div class="button"><a href="#"><b>Обратная связь</b></a></div>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper">
-                    <div class="button"><b>Доставка</b></div>
+                    <div class="button"><a href="#"><b>Доставка</b></a></div>
                 </div>
             </a>
         </div>
-        <a href="#">    <!-- link here -->
+        <a href="{% url 'vetmag_login'%}">    
             <div class="button-wrapper">
                 <div class="button"><b>Личный кабинет</b></div>
             </div>
         </a>
     </div>
 
-    <!-- buisness-card -->
+    
 
     <div class="buisness-card">
         <div class="card-info">
             <div class="logo">
-                <img src="Images/logo.png">
+                <img src="{% static 'main/Images/logo.png' %}"> 
             </div>
             <div class="about">
                 <div class="info">
@@ -57,17 +58,17 @@
                         <p>+7(904) 831-23-42</p>
                         <p>+7(904) 942-85-12</p>
                     </div>
-                    <a href="#">    <!-- link here -->
+                    <a href="#">    
                         <div class="cart">
                             <div class="cart-img">
-                                <img src="Images/cart_ico.png">
+                                <img src="{% static 'main/Images/cart_ico.png' %}"> 
                             </div>
                             <p>Корзина</p>
                         </div>
                     </a>
                 </div>
                 <div class="search-field">
-                    <form action="#" method="post" autocomplete="off">  <!-- action here -->
+                    <form action="#" method="post" autocomplete="off">  
                         <input type="text" id="search" placeholder="Найти товары" required>
                         <input type="submit" class="search-logo" value="">
                     </form>
@@ -76,39 +77,39 @@
         </div>
         <div class="line" style="position: relative; top: 4.2vh;"></div>
         <div class="card-catalogue">
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для кошек</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для кошек</div></a>
+                </div> 
+            </a>
+            <a href="#">    
+                <div class="button-wrapper-white">
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для собак</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для собак</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для грызунов</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для грызунов</p></div>
+                    <a href="{% url 'vetmag_catalogue' %}"><div class="button">Товары для птиц</div></a>
                 </div>
             </a>
-            <a href="#">    <!-- link here -->
+            <a href="#">    
                 <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для птиц</p></div>
-                </div>
-            </a>
-            <a href="#">    <!-- link here -->
-                <div class="button-wrapper-white">
-                    <div class="button"><p>Товары для рыб</p></div>
+                    <div class="button"><a href="{% url 'vetmag_catalogue' %}">Товары для рыб</a></div>
                 </div>
             </a>
         </div>
     </div>
 
-    <!-- content area -->
+
 
     <div class="content">
 
-        <!-- left collumn -->
+        
 
         <div class="left-collumn">
             <div class="offer" style="margin-top: 0vh; height: 138vh;">
@@ -171,31 +172,31 @@
             </div>
         </div>
 
-        <!-- right collumn -->
+      
 
         <div class="right-collumn">
 
             <h1 class="giant-text">Каталог</h1>
             <br>
 
-            <!-- 1st category -->
+            
 
             <div class="item-category" style="margin-top: 0vh;">
                 <h1>Товары для кошек</h1>
                 <div class="item-row">
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/one.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Purina Pro Plan Lifeclear</p>
                         </div>
                         <br>
                         <div class="line"></div>
                         <br>
                         <div class="price">
                             <h2>76 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -204,17 +205,17 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/two.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Profine Derma Adult</p>
                         </div>
                         <br>
                         <div class="line"></div>
                         <br>
                         <div class="price">
                             <h2>76 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -223,7 +224,7 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/three.jpeg' %}"> 
                         </div>
                         <div class="card-text">
                             <p>Royal Canin Sterilised</p>
@@ -233,7 +234,7 @@
                         <br>
                         <div class="price">
                             <h2>76 ₽</h2>
-                            <a href="#">    <!-- link here -->
+                            <a href="#">    
                                 <div class="buy-button">
                                     <p>Купить</p>
                                 </div>
@@ -250,10 +251,10 @@
                 <div class="item-row">
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/four.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Purina Pro Plan Puffy</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -269,10 +270,10 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/five.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Purina Pro Plan Adult</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -288,10 +289,10 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/six.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Hills Kidney Mobility</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -315,10 +316,10 @@
                 <div class="item-row">
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/seven.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Verse Nature</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -334,10 +335,10 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/eitght.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Игрушка мячик</p>
                         </div>
                         <br>
                         <div class="line"></div>
@@ -353,10 +354,10 @@
                     </div>
                     <div class="item-card">
                         <div class="card-img">
-                            <img src="Images/product-1.png">
+                            <img src="{% static 'main/Images/nine.jpeg' %}"> 
                         </div>
                         <div class="card-text">
-                            <p>Royal Canin Sterilised</p>
+                            <p>Игрушка рыба для котов</p>
                         </div>
                         <br>
                         <div class="line"></div>
